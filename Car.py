@@ -7,7 +7,7 @@ class Car:
     wheels = 4
 
     """
-    def __init__(self): # self è par. obbligatorio
+    def __init__(self): # self è parametro obbligatorio
         # Variabili o attributi di istanza
         # Ogni oggetto creato a partire dalla classe Car
         # ne ha una propria copia e i suoi valori possono cambiare
@@ -20,7 +20,6 @@ class Car:
         self.licensePlate = licensePlate
         self.bodyColor = bodyColor
         self.turnedOn = False # Posso anche inizializzarlo senza usare parametri
-
 
     def paint(self, color): # Riceve come parametro il nuovo colore
         self.bodyColor = color # Assegna color all'attributo self.bodyColor
@@ -52,7 +51,7 @@ print(c2.licensePlate)
 # Stampo tutti gli attributi
 print(c1.licensePlate, c1.bodyColor, c1.turnedOn)
 
-# Oppure, invoco printYourself()
+# Oppure, invoco printYourself(), magari dopo aver usato gli altri metodi
 
 c1.paint("Green")
 c1.turnOn()
@@ -64,14 +63,17 @@ Car.printYourself(c1)
 c2.paint("Blue")
 c2.printYourself()
 
-# Se in un qualunque punto del codice prendo il nome
-# di un oggetto e scrivo
+# Se in un qualunque punto del codice prendo il nome di un oggetto e scrivo
 
-c1.hasBeenWashed = True
+c1.hasBeenWashed = True # Sto definendo una variabile di istanza per quello specifico oggetto
 
-c1.wheels = 6 # Sto creando un nuovo attributo / variabile di istanza
+# Con riferimento a wheels, in particolare, se scrivo
 
-Car.wheels = 8 # Per accedere alla variabile di classe devo usare Car
+c1.wheels = 6 # Sto creando una nuova variabile / attributo DI ISTANZA per c1
+
+# Con l'istruzione che segue, invece, che usa Car
+
+Car.wheels = 8 # Sto cambiando la variabile / attributo DI CLASSE
 
 
 

@@ -11,6 +11,12 @@ class Libro:
         self.__numPagine= 0
         self._anno = 0 # Protezione più lasca (warning)
 
+    # Restituisce l'anno
+    """
+    def dammiAnno(self):
+        return self.__anno
+    """
+
     # Imposta l'anno in maniera controllata
     """
     def impostaAnno(self, anno):
@@ -20,14 +26,9 @@ class Libro:
             self.__anno = anno
     """
 
-
-    # Restituisce l'anno
-    """
-    def dammiAnno(self):
-        return self.__anno
-    """
-
-
+    @property
+    def anno(self): # Metodo getter per l'attributo anno
+        return self._anno
 
     @anno.setter
     def anno(self, anno):
@@ -35,10 +36,6 @@ class Libro:
             print("Tentativo di imp. anno negativo")
         else:
             self._anno = anno
-
-    @property
-    def anno(self): # Metodo getter per l'attributo anno
-        return self._anno
 
 l1 = Libro()
 
