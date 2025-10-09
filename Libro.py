@@ -52,3 +52,10 @@ l1._anno = -500
 # Come accedere ad un attributo non visibile?
 
 l1.impostaAnno(-500)
+
+# Se ho dichiarato getter e setter con i decoratori
+
+l1.anno = 2008 # Pyhton chiama il setter
+print(l1.anno) # Python chiama il getter
+
+l1.__repr__()
